@@ -11,7 +11,4 @@ This project is a collection of my favorite recipes, presented as web pages usin
 - Implement CSS styling for an attractive layout
 - Learn to create responsive designs.
 
-## Future Plans:
-- Add more recipes
-- Implement a responsive design
-- Create a homepage with links to all recipes
+

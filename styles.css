@@ -1,36 +1,179 @@
+
+/*Desciribing size for the container to fit the cards*/
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&family=Poppins&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 body{
-    border: 3px solid rgb(250, 250, 250);
-}
-h1{
-    text-align: center;
-    border-bottom: 1px solid rgb(44, 35, 3);
-    background-color: rgb(214, 183, 243);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Poppins", sans-serif;
     
 }
-.picture1{
+.logo{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.logo img{   
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+}
+h1{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #961818;
+    text-shadow: #95b310;
+}
+.nav-bar ul{ 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+    margin: 5px 0 0 0 0;  
+    border-bottom: 2px solid rgb(16, 149, 158);
+    border-radius: 8px;   
     
-    max-width: 1400px;
-    flex-wrap: flex;
-    border: 3px solid rgb(253, 251, 251);    
-    margin: 0 auto;
 }
-img{
-    max-width: 450px;
-    max-height: 500px;
-    border-radius: 50px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.nav-bar li{
+    text-decoration: none;
+    font-size: x-large;
+    border-radius: 5px;
+    padding: 5px 20px 5px 20px; /*up right down left*/
+    
 }
-.picture-content{
-    font-family:'Times New Roman', Times, serif;
-    font-weight: bold;
-    font-size: larger;
+.nav-bar li a{
+    text-decoration: none; /*Removing the underline after clicking the link*/
+    color: black;
+}
+a:hover{
+    text-decoration: none;
+    border-radius: 8px;
+}
+.container-recipe-cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 4 columns, each 500px wide */
+    grid-auto-rows: 500px;
+    gap: 20px; /* Adds spacing between grid items */
+    justify-content: center; /* Centers the grid horizontally in the container */
+    align-items: center; /* Centers items vertically within their grid cells */
+    padding: 20px; 
+    margin: 20px;   
+}
+.recipe-card{    
+    border: 1px solid #e4e0e0; /*adds a border for clarity */
+    border-radius: 8px; /* rounds the corners */
+    display: flex; /* Use flexbox to center content inside the grid item */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    box-shadow:  0 4px 8px 0 rgba(191, 195, 250, 0.19), 0 6px 20px 0 rgba(4, 189, 164, 0.19); /*offset-x offset-y blur-radius spread-radius color;*/
+}
+.recipe-image{
+    justify-content: center;
+    height: 200px;
+    width: 250px;
+    border-radius: 8px;
+    margin: 10px;
+    object-fit: cover;
+}
+.view-recipe-btn{
+    margin: 10px;
+    color: white;
+    background-color:brown;
+    border-radius: 5px;
+    padding: 5px;   
+}
+.recipe-description{
+    margin: 10px;
+    justify-content: center;
+    text-align: justify;
+    word-break: break-all;
+}
+.recipe-title{
+    justify-content: center;
+    margin: 10px;   
+}
 
-}
+/*Display a pop up on clicking the view recipe*/
 
-.ingredient{
-    
+.modal{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;   
+}
+/* Modal content */
+.modal-content{
+    background: linear-gradient(120deg, #1d976c, #cfd4da);
     padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    box-shadow: 0 4px 8px rgba(4, 202, 120, 0.2);
+    animation: fadeIn 0.3s;
+}
+/*Recipe Description*/
+.ingredients-recipe ul li{
+    list-style-type: circle;
+    justify-content: left;
+}
+/* Close button */
+.close{
+    display: flex;
+    float: right;
+    font-size: 30px;    
+    cursor: pointer;
+    color: #f00d0d;
+}
+.print-btn{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #b63413;
+    color: white;
+    font-size: medium;
+    text-transform: capitalize;
+}
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
 }
 
+/*To print the REcipe only*/
+@media print {
+    /* Hide unnecessary elements */
+    body * {
+        visibility: hidden;
+    }
+
+    /* Make only the modal content visible */
+    .modal-content {
+        visibility: visible;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+
+    /* Ensure all elements inside modal-content are visible */
+    .modal-content * {
+        visibility: visible;
+    }
+
+    /* Remove background colors and images */
+    .modal-content {
+        background: none !important;
+        box-shadow: none;
+    }
+
+    /* Hide close button and print button */
+    .close,
+    .print-btn {
+        display: none;
+    }
+}

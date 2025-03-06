@@ -6,35 +6,23 @@
         <meta name="keywords" content="Recipe">
         <meta name="author" content="John Doe">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My Recipe Collection</title>
+        <title>Recipe Collection</title>
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
     <div class="logo">
         <img src="./assets/recipe-book.png" alt="logo-cooking">
-        <h1>My Collection of Recipes around the World!</h1>
+        <h1>Search for your favorite Recipes!</h1>
     </div>
-    <div class="search">    
-        <form>
-            <input type="text" placeholder="Search for a Recipe.." name="search">
-            <button type="submit" id="search"><i class="fa fa-search"></i></button>
-        </form>
+ 
+    <input type="text" id="searchInput" placeholder="Search for a recipe...">
+    <button id="searchButton">Search</button>
+
+    <div id="recipesContainer">
+        
     </div>
-       
-        <main>
-        <div class="container-recipe-cards">
-            
-            <div class="recipe-card">
-                
-            </div>
-            <!-- Modal (Hidden by default) -->
-            <div id="recipe-modal" class="modal">
-                
-            </div>
-        </div>
-            
-        </main> 
+
     <script src="./script.js"></script>  
     </body>
 </html> 

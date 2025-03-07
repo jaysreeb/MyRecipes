@@ -15,6 +15,9 @@ I am currently redeveloping this site to integrate a recipe search feature using
 ## Screenshots (The old Static Website)
 ![alt text](image.png)
 
+## Screenshots of the Dynamic site
+![alt text](image-1.png)
+
 
 ## Goals:
 - Practice HTML structure and semantic elements

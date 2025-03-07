@@ -31,7 +31,8 @@ function displayRecipes(meals) {
             <h2>${meal.strMeal}</h2>
             <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
             <p><strong>Category:</strong> ${meal.strCategory}</p>
-            <p><strong>Instructions:</strong> ${meal.strInstructions.substring(0, 100)}...</p>
+            <p><strong>Instructions:</strong> ${meal.strInstructions}</p>
+            <p><strong>Ingredients:</strong>${meal.strIngredient1}<strong>${meal.strMeasure1}</strong>
         `;
 
         container.appendChild(recipeCard);

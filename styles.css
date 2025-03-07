@@ -39,7 +39,8 @@ input, button {
     padding: 10px;
     margin: 10px;
     display: inline-block;
-    width: 200px;
+    height: 800px;
+    width: 500px;
     text-align: left;
 }
 
